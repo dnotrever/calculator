@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="#">
+    <title>Calculator</title>
+</head>
+<body onload="calculator.init()">
+    <div class="container">
+        <div class="calculator">
+            <div class="display">
+                <p class="display-top"></p>
+                <p class="display-bot"></p>
+            </div>
+            <div class="keyboard">
+                <div class="key" onclick="calculator.init()">C</div>
+                <div class="key" onclick="calculator.squared()">x²</div>
+                <div class="key percent" onclick="calculator.percent()">%</div>
+                <div class="key" onclick="calculator.backspace()">←</div>
+                <div class="key" onclick="calculator.number('7')">7</div>
+                <div class="key" onclick="calculator.number('8')">8</div>
+                <div class="key" onclick="calculator.number('9')">9</div>
+                <div class="key operat" onclick="calculator.operation('/', '÷')">÷</div>
+                <div class="key" onclick="calculator.number('4')">4</div>
+                <div class="key" onclick="calculator.number('5')">5</div>
+                <div class="key" onclick="calculator.number('6')">6</div>
+                <div class="key operat" onclick="calculator.operation('*', '×')">×</div>
+                <div class="key" onclick="calculator.number('1')">1</div>
+                <div class="key" onclick="calculator.number('2')">2</div>
+                <div class="key" onclick="calculator.number('3')">3</div>
+                <div class="key operat" onclick="calculator.operation('-')">-</div>
+                <div class="key" onclick="calculator.number('0')">0</div>
+                <div class="key" onclick="calculator.decimal()">,</div>
+                <div class="key equals" onclick="calculator.result()">=</div>
+                <div class="key operat" onclick="calculator.operation('+')">+</div>
+            </div>
+        </div>
+    </div>
+    <script src="calculator.js"></script>
+</body>
+</html>
