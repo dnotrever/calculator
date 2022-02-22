@@ -72,7 +72,6 @@ const calculator = {
             this.display_bot.innerHTML += ','
 
             this.showConsole()
-
         }
 
     },
@@ -97,7 +96,6 @@ const calculator = {
             }
 
             this.showConsole()
-
         }
 
     },
@@ -117,7 +115,6 @@ const calculator = {
             }
 
             this.showConsole()
-
         }
 
     },
@@ -127,7 +124,6 @@ const calculator = {
         const eq_format = this.equation.toString().replaceAll(',', '')
 
         if (!isNaN(eq_format)) {
-
             const squared = eq_format ** 2
 
             this.display_top.innerHTML = this.display_bot.innerText + '²'
@@ -139,17 +135,25 @@ const calculator = {
             this.equation.push(squared)
 
             this.showConsole()
-
         }
 
     },
 
-    percent() {},
+    percent() {
+
+        if (this.logics.modifier === true &&
+            !this.equation.includes('/')) {
+            this.equation.push('/')
+            this.display_bot.innerHTML += '%'
+        }
+
+        this.showConsole()
+
+    },
 
     result() {
 
         if (this.logics.modifier === true) {
-
             const eq_format = this.equation.toString().replaceAll(',', '')
             const result = (eval(eq_format)).toString()
 
@@ -161,10 +165,9 @@ const calculator = {
             this.equation = []
             this.equation.push(result)
 
-            this.showConsole()
+            // this.showConsole()
 
             console.log('Result: ', result)
-
         }
 
     },
